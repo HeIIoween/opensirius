@@ -1,6 +1,7 @@
 @echo off
-echo GITHub может тормозить. Ожидайте...
-
+echo GITHub mozhet tormozit'. Ozhidayte...
+echo I ne trogay'te faily...! :-E
+.\Misc\PortableGit\bin\git restore .
 .\Misc\PortableGit\bin\git pull https://github.com/HeIIoween/opensirius.git
 
 xcopy .\Misc\Rus\equipresources.dll .\exe /y
