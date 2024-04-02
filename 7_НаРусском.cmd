@@ -1,3 +1,6 @@
+@echo off
+echo GITHub может тормозить. Ожидайте...
+
 .\Misc\PortableGit\bin\git pull https://github.com/HeIIoween/opensirius.git
 
 xcopy .\Misc\Rus\equipresources.dll .\exe /y
