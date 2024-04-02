@@ -1,3 +1,6 @@
+@echo off
+echo GITHub might be unresponsible - just wait... Zzz...
+
 .\Misc\PortableGit\bin\git pull https://github.com/HeIIoween/opensirius.git
 
 xcopy .\Misc\Eng\equipresources.dll .\exe /y
