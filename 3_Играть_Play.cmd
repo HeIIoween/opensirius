@@ -1,3 +1,9 @@
+@echo off 
+echo GITHub mozhet tormozit'. Ozhidayte...
+echo I ne trogay'te faily...! :-E
+echo GITHub might be unresponsible - just wait... Zzz...
+echo And do not touch the files! :-E
+.\Misc\PortableGit\bin\git restore .
 .\Misc\PortableGit\bin\git pull https://github.com/HeIIoween/opensirius.git
 
 taskkill /IM freelancer.bin /F
