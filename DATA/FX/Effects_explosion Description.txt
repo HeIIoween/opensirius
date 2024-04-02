@@ -1,0 +1,16 @@
+The effects_explosion.ini file is here to show what code needs to be 
+added to the effects_explosion.ini in order for the new ALEs to function. 
+The weapon ALEs are all replacements of the ALEs included in vanilla 
+Freelancer, so they require no new code, they work out of the box. 
+
+To add the new explosion ALEs to your mod, you will need to copy the entry 
+that is both in the effects_explosion.ini, and its corresponding entry in 
+the \EXPLOSIONS\explosions_ale.ini file. Along with copying the actual ALE 
+to the \EXPLOSIONS folder. If any one of these is missing, the effect will
+not appear. 
+
+------------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

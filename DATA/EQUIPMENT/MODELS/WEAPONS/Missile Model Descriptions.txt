@@ -1,0 +1,18 @@
+These missiles are basically just resized versions of their existing ones. I was 
+actually completely unaware that missiles even used a model until I saw these. The
+missiles are big enough so that they can actually be seen when launched now. 
+
+------------------------------------------------------------------------------------
+
+dummy_round
+
+This is a special model I made that contains empty information. It does have an 
+HPFire, so this can be used as an invisible round. It also has an HPMount and 
+HPConnect so that it can be mounted and be used as an invisible gun. I use this 
+for the ambient explosion system.
+
+------------------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

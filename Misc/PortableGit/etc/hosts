@@ -1,0 +1,52 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#     127.0.0.1       localhost
+#     ::1             localhost
+
+
+
+0.0.0.0 activation.phaseone.com
+127.0.0.1 industrial.phaseone.com
+127.0.0.1 coweb.phaseone.com
+127.0.0.1 help.phaseone.com
+0.0.0.0 play.google.com
+176.57.221.163 pa.larson.ru
+37.19.1.226 backup-mail.bkgrupp.com
+
+# ------------------------------------------
+# Skylum Luminar 4
+# ------------------------------------------
+127.0.0.1  auth.macphun.com
+127.0.0.1  luminar3win.update.skylum.com
+127.0.0.1  luminar3.s3-accelerate.amazonaws.com
+127.0.0.1  luminar4win.update.skylum.com
+127.0.0.1  luminar4.s3-accelerate.amazonaws.com
+127.0.0.1  stats-api.skylum.com
+127.0.0.1  geotargetly-1a441.appspot.com
+127.0.0.1  fx.macphun.com
+127.0.0.1  canonicalizer.ucsuri.tcs
+127.0.0.1  api.macphun.com
+127.0.0.1  stats-api.skylum.com
+127.0.0.1  api.photolemur.com
+
+0.0.0.0 genuine.adobe.com
+0.0.0.0 assets.adobedtm.com
+0.0.0.0 cc-api-data.adobe.io
+0.0.0.0 ic.adobe.io

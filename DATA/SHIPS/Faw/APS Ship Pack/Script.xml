@@ -1,0 +1,377 @@
+<script>
+
+<header name="APS Ship Pack" savesafe="true">
+<scriptversion>
+1.2
+</scriptversion>
+<author>
+Astral Prime Studios
+</author>
+<description>
+Adds the following ships:
+
+Pegasus (@Rochester)
+Griffin (@Mactan)
+Hydra (@Freeport 9)
+</description>
+</header>
+
+
+<data file="data\ships\shiparch.ini" method="append">
+<source>
+[Ship]
+ids_name = 0 ;GENERATESTRRES("Pegasus")
+ids_info = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TEXT> </TEXT><PARA/><TRA data="1" mask="1" def="-2"/><JUST loc="center"/><TEXT>Stats</TEXT><PARA/><TRA data="0" mask="1" def="-1"/><JUST loc="left"/><TEXT> </TEXT><PARA/><TEXT>Gun/Turret Mounts: 4/0</TEXT><PARA/><TEXT>Armor: 2200</TEXT><PARA/><TEXT>Cargo Space: 25</TEXT><PARA/><TEXT>Max Batteries/Nanobots: 15/15</TEXT><PARA/><TEXT>Optimal Weapon Class: 3</TEXT><PARA/><TEXT>Max. Weapon Class: 5</TEXT><PARA/><TEXT>Additional Equipment: CM, M</TEXT><PARA/><PARA/><POP/></RDL>")
+ids_info1 = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TRA data="1" mask="1" def="-2"/><JUST loc="center"/><TEXT>Pegasus</TEXT><PARA/><TEXT></TEXT><PARA/><TRA data="0" mask="1" def="-1"/><JUST loc="left"/><TEXT>The Pegasus is a small and agile fighter, capable of engaging ships beyond its class.</TEXT><PARA/><TEXT></TEXT><PARA/><TEXT>Initially designed for the house militaries the Pegusus was rejected for being too light for frontline duty and the design eventually found its way to less 'reputable' factions where it is found to be ideal for hit and run raids.</TEXT><PARA/><PARA/><POP/></RDL>")
+ids_info2 = 66608
+ids_info3 = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TEXT> </TEXT><PARA/><TEXT> </TEXT><PARA/><TEXT>4/0</TEXT><PARA/><TEXT>2200</TEXT><PARA/><TEXT>25</TEXT><PARA/><TEXT>15/15</TEXT><PARA/><TEXT>3</TEXT><PARA/><TEXT>5</TEXT><PARA/><TEXT>CM, M</TEXT><PARA/><POP/></RDL>")
+ship_class = 0
+nickname = aps_pegasus
+LODranges = 0, 5000
+msg_id_prefix = gcs_refer_shiparch_startracker   
+mission_property = can_use_berths
+type = FIGHTER   
+DA_archetype = ships\APS\aps_pegasus.cmp
+material_library = ships\APS\aps_ships.mat
+material_library = fx\envmapbasic.mat   
+envmap_material = envmapbasic   
+cockpit = cockpits\APS\aps.ini
+pilot_mesh = generic_pilot   
+nanobot_limit = 15
+shield_battery_limit = 15   
+mass = 100.000000   
+linear_drag = 1.000000   
+hold_size = 25
+fuse = intermed_damage_smallship02, 0.000000, 450   
+fuse = intermed_damage_smallship03, 0.000000, 225   
+max_bank_angle = 25
+camera_offset = 8, 30
+camera_angular_acceleration = 0.050000   
+camera_horizontal_turn_angle = 20   
+camera_vertical_turn_up_angle = 5   
+camera_vertical_turn_down_angle = 30   
+camera_turn_look_ahead_slerp_amount = 1.000000   
+hit_pts = 2200
+explosion_arch = explosion_cv_fighter   
+surface_hit_effects = 0, small_hull_hit_light01, small_hull_hit_light02, small_hull_hit_light03   
+surface_hit_effects = 150, small_hull_hit_medium01, small_hull_hit_medium02, small_hull_hit_medium03
+surface_hit_effects = 300, small_hull_hit_heavy01, small_hull_hit_heavy02, small_hull_hit_heavy03
+steering_torque = 22000.000000, 22000.000000, 65000.000000
+angular_drag = 15000.000000, 15000.000000, 35000.000000   
+rotation_inertia = 2800.000000, 2800.000000, 1000.000000   
+nudge_force = 30000.000000   
+strafe_force = 20000
+strafe_power_usage = 2
+bay_door_anim = Sc_open baydoor   
+bay_doors_open_snd = cargo_doors_open   
+bay_doors_close_snd = cargo_doors_close   
+HP_bay_surface = HpBayDoor01   
+HP_bay_external = HpBayDoor02   
+HP_tractor_source = HpTractor_Source   
+num_exhaust_nozzles = 1   
+shield_link = cv_fighter_shield01, HpMount, HpShield01
+hp_type = hp_gun_special_5, HpWeapon03, HpWeapon04
+hp_type = hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_type = hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_type = hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_type = hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_type = hp_fighter_shield_special_4, HpShield01
+hp_type = hp_fighter_shield_special_3, HpShield01   
+hp_type = hp_fighter_shield_special_2, HpShield01
+hp_type = hp_fighter_shield_special_1, HpShield01   
+hp_type = hp_thruster, HpThruster01    
+hp_type = hp_mine_dropper, HpMine01
+hp_type = hp_countermeasure_dropper, HpCM01   
+
+[Ship]
+ids_name = 0 ;GENERATESTRRES("Griffin")
+ids_info = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TEXT> </TEXT><PARA/><TRA data="1" mask="1" def="-2"/><JUST loc="center"/><TEXT>Stats</TEXT><PARA/><TRA data="0" mask="1" def="-1"/><JUST loc="left"/><TEXT> </TEXT><PARA/><TEXT>Gun/Turret Mounts: 6/0</TEXT><PARA/><TEXT>Armor: 4500</TEXT><PARA/><TEXT>Cargo Space: 40</TEXT><PARA/><TEXT>Max Batteries/Nanobots: 33/33</TEXT><PARA/><TEXT>Optimal Weapon Class: 5</TEXT><PARA/><TEXT>Max. Weapon Class: 7</TEXT><PARA/><TEXT>Additional Equipment: CM, M, CD</TEXT><PARA/><PARA/><POP/></RDL>")
+ids_info1 = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TRA data="1" mask="1" def="-2"/><JUST loc="center"/><TEXT>Giffin</TEXT><PARA/><TEXT></TEXT><PARA/><TRA data="0" mask="1" def="-1"/><JUST loc="left"/><TEXT>The Griffin is a heavy fighter, capable of punishing fire-power, whilst retaining good manouverability.</TEXT><PARA/><TEXT></TEXT><PARA/><TEXT>With the success of the Pegasus the need for something with more punch resulted in the this upgrade which is a match for anything the  police forces have in their possession.</TEXT><PARA/><PARA/><POP/></RDL>")
+ids_info2 = 66608
+ids_info3 = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TEXT> </TEXT><PARA/><TEXT> </TEXT><PARA/><TEXT>6/0</TEXT><PARA/><TEXT>4500</TEXT><PARA/><TEXT>40</TEXT><PARA/><TEXT>33/33</TEXT><PARA/><TEXT>5</TEXT><PARA/><TEXT>7</TEXT><PARA/><TEXT>CM, M, CD</TEXT><PARA/><POP/></RDL>")
+ship_class = 1
+nickname = aps_griffen
+LODranges = 0, 5000
+msg_id_prefix = gcs_refer_shiparch_lfighter
+mission_property = can_use_berths   
+type = FIGHTER   
+mass = 100.000000   
+hold_size = 40
+linear_drag = 1.000000
+fuse = intermed_damage_smallship02, 0.000000, 825   
+fuse = intermed_damage_smallship03, 0.000000, 413   
+max_bank_angle = 22
+camera_offset = 8, 30
+camera_angular_acceleration = 0.050000   
+camera_horizontal_turn_angle = 20   
+camera_vertical_turn_up_angle = 5   
+camera_vertical_turn_down_angle = 30
+camera_turn_look_ahead_slerp_amount = 1.000000   
+nanobot_limit = 33
+shield_battery_limit = 33
+hit_pts = 4500
+DA_archetype = ships\APS\aps_griffin.cmp
+material_library = ships\APS\aps_ships.mat
+material_library = fx\envmapbasic.mat   
+envmap_material = envmapbasic   
+cockpit = cockpits\APS\aps.ini   
+pilot_mesh = generic_pilot   
+distance_render = 3500
+explosion_arch = explosion_cv_fighter   
+surface_hit_effects = 0, small_hull_hit_light01, small_hull_hit_light02, small_hull_hit_light03   
+surface_hit_effects = 150, small_hull_hit_medium01, small_hull_hit_medium02, small_hull_hit_medium03
+surface_hit_effects = 300, small_hull_hit_heavy01, small_hull_hit_heavy02, small_hull_hit_heavy03   
+steering_torque = 28000.000000, 28000.000000, 75000.000000   
+angular_drag = 15000.000000, 15000.000000, 35000.000000   
+rotation_inertia = 2800.000000, 2800.000000, 1000.000000   
+nudge_force = 30000.000000   
+strafe_force = 20000
+strafe_power_usage = 2   
+num_exhaust_nozzles = 1
+HP_tractor_source = HpTractor_Source   
+shield_link = cv_fighter4_shield01, HpMount, HpShield01
+hp_type = hp_gun_special_7, HpWeapon01, HpWeapon02
+hp_type = hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06   
+hp_type = hp_fighter_shield_special_6, HpShield01   
+hp_type = hp_fighter_shield_special_5, HpShield01   
+hp_type = hp_fighter_shield_special_4, HpShield01   
+hp_type = hp_fighter_shield_special_3, HpShield01   
+hp_type = hp_fighter_shield_special_2, HpShield01   
+hp_type = hp_fighter_shield_special_1, HpShield01   
+hp_type = hp_thruster, HpThruster01    
+hp_type = hp_mine_dropper, HpMine01   
+hp_type = hp_countermeasure_dropper, HpCM01   
+hp_type = hp_torpedo_special_2, HpTorpedo01   
+   
+[Ship]
+ids_name = 0 ;GENERATESTRRES("Hydra")
+ids_info = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TEXT> </TEXT><PARA/><TRA data="1" mask="1" def="-2"/><JUST loc="center"/><TEXT>Stats</TEXT><PARA/><TRA data="0" mask="1" def="-1"/><JUST loc="left"/><TEXT> </TEXT><PARA/><TEXT>Gun/Turret Mounts: 6/0</TEXT><PARA/><TEXT>Armor: 8100</TEXT><PARA/><TEXT>Cargo Space: 70</TEXT><PARA/><TEXT>Max Batteries/Nanobots: 55/55</TEXT><PARA/><TEXT>Optimal Weapon Class: 7</TEXT><PARA/><TEXT>Max. Weapon Class: 9</TEXT><PARA/><TEXT>Additional Equipment: CM, M, CD/T</TEXT><PARA/><PARA/><POP/></RDL>")
+ids_info1 = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TRA data="1" mask="1" def="-2"/><JUST loc="center"/><TEXT>Soulforge's Train</TEXT><PARA/><TEXT></TEXT><PARA/><TRA data="0" mask="1" def="-1"/><JUST loc="left"/><TEXT>The Hydra is the heaviest ship in the line. High armor levels, good offensive weapons mounts and reasonable manouvering ensure that this very heavy fighter is capable of engaging and destroying other ships in its class.</TEXT><PARA/><PARA/><POP/></RDL>")
+ids_info2 = 66608
+ids_info3 = 0 ;GENERATEXMLRES("<?xml version="1.0" encoding="UTF-16"?><RDL><PUSH/><TEXT> </TEXT><PARA/><TEXT> </TEXT><PARA/><TEXT>6/0</TEXT><PARA/><TEXT>8100</TEXT><PARA/><TEXT>70</TEXT><PARA/><TEXT>55/55</TEXT><PARA/><TEXT>7</TEXT><PARA/><TEXT>9</TEXT><PARA/><TEXT>CM, M, CD/T</TEXT><PARA/><POP/></RDL>")
+ship_class = 3
+nickname = aps_hydra
+msg_id_prefix = gcs_refer_shiparch_hfighter   
+mission_property = can_use_berths   
+LODranges = 0, 5000
+type = FIGHTER   
+DA_archetype = ships\APS\aps_hydra.cmp
+material_library = ships\APS\aps_ships.mat
+material_library = fx\envmapbasic.mat
+envmap_material = envmapbasic   
+cockpit = cockpits\civilian\civilian_elite.ini   
+pilot_mesh = generic_pilot   
+nanobot_limit = 55
+shield_battery_limit = 55
+mass = 150.000000   
+hold_size = 70
+linear_drag = 1.000000   
+fuse = intermed_damage_smallship01, 0.000000, 1550   
+fuse = intermed_damage_smallship02, 0.000000, 775   
+fuse = intermed_damage_smallship03, 0.000000, 517
+max_bank_angle = 20
+camera_offset = 9, 33
+camera_angular_acceleration = 0.050000   
+camera_horizontal_turn_angle = 20
+camera_vertical_turn_up_angle = 5   
+camera_vertical_turn_down_angle = 30   
+camera_turn_look_ahead_slerp_amount = 1.000000   
+hit_pts = 8100
+explosion_arch = explosion_cv_fighter   
+surface_hit_effects = 0, small_hull_hit_light01, small_hull_hit_light02, small_hull_hit_light03   
+surface_hit_effects = 150, small_hull_hit_medium01, small_hull_hit_medium02, small_hull_hit_medium03   
+surface_hit_effects = 300, small_hull_hit_heavy01, small_hull_hit_heavy02, small_hull_hit_heavy03   
+steering_torque = 58000.000000, 58000.000000, 50000.000000
+angular_drag = 41000.000000, 41000.000000, 35000.000000
+rotation_inertia = 8400.000000, 8400.000000, 1000.000000
+nudge_force = 30000.000000   
+strafe_force = 20000
+strafe_power_usage = 2
+bay_door_anim = Sc_open baydoor   
+bay_doors_open_snd = cargo_doors_open   
+bay_doors_close_snd = cargo_doors_close   
+HP_bay_surface = HpBayDoor01   
+HP_bay_external = HpBayDoor02   
+HP_tractor_source = HpTractor_Source   
+num_exhaust_nozzles = 2   
+shield_link = cv_fighter5_shield01, HpMount, HpShield01
+hp_type = hp_gun_special_9, HpWeapon01, HpWeapon02
+hp_type = hp_gun_special_8, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_7, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_type = hp_fighter_shield_special_8, HpShield01   
+hp_type = hp_fighter_shield_special_7, HpShield01
+hp_type = hp_fighter_shield_special_6, HpShield01   
+hp_type = hp_fighter_shield_special_5, HpShield01   
+hp_type = hp_fighter_shield_special_4, HpShield01   
+hp_type = hp_fighter_shield_special_3, HpShield01   
+hp_type = hp_fighter_shield_special_2, HpShield01   
+hp_type = hp_fighter_shield_special_1, HpShield01
+hp_type = hp_thruster, HpThruster01    
+hp_type = hp_mine_dropper, HpMine01
+hp_type = hp_countermeasure_dropper, HpCM01   
+hp_type = hp_torpedo_special_1, HpTorpedo01
+hp_type = hp_torpedo_special_2, HpTorpedo01
+</source>
+</data>
+
+<data file="data\equipment\goods.ini" method="append">
+<source>
+[Good]
+nickname = aps_pegasus_hull
+category = shiphull
+ship = aps_pegasus
+price = 22250
+ids_name = 12016   
+item_icon = Equipment\models\commodities\nn_icons\Pegasus.3db
+
+[Good]
+nickname = aps_pegasus_package
+category = ship   
+hull = aps_pegasus_hull
+addon = ge_rf_engine_01, internal, 1
+addon = rh_elite_power01, internal, 1
+addon = ge_s_scanner_01, internal, 1
+addon = ge_s_tractor_01, internal, 1
+addon = shield01_mark02_lf, HpShield01, 1
+addon = LargeWhiteSpecial, HpHeadlight01, 1
+addon = SlowSmallWhite, HpRunningLight01, 1   
+addon = SlowSmallWhite, HpRunningLight02, 1   
+addon = SlowSmallWhite, HpRunningLight03, 1
+addon = contrail01, HpContrail01, 1
+addon = contrail01, HpContrail02, 1  
+addon = contrail01, HpContrail03, 1
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+
+[Good]
+nickname = aps_griffen_hull
+category = shiphull
+ship = aps_griffen
+price = 125000
+ids_name = 12016   
+item_icon = Equipment\models\commodities\nn_icons\Griffin.3db
+
+[Good]
+nickname = aps_griffen_package
+category = ship   
+hull = aps_griffen_hull
+addon = ge_rf_engine_01, internal, 1
+addon = rh_elite_power01, internal, 1
+addon = ge_s_scanner_01, internal, 1
+addon = ge_s_tractor_01, internal, 1
+addon = shield01_mark04_lf, HpShield01, 1
+addon = LargeWhiteSpecial, HpHeadlight01, 1
+addon = SlowSmallYellow, HpRunningLight01, 1
+addon = SlowSmallYellow, HpRunningLight02, 1
+addon = SlowSmallYellow, HpRunningLight03, 1
+addon = contrail01, HpContrail01, 1
+addon = contrail01, HpContrail02, 1  
+addon = contrail01, HpContrail03, 1
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+
+[Good]
+nickname = aps_hydra_hull
+category = shiphull
+ship = aps_hydra
+price = 400000
+ids_name = 12016   
+item_icon = Equipment\models\commodities\nn_icons\Hydra.3db
+
+[Good]
+nickname = aps_hydra_package
+category = ship   
+hull = aps_hydra_hull
+addon = ge_re_engine_01, internal, 1
+addon = rh_elite_power01, internal, 1
+addon = ge_s_scanner_01, internal, 1
+addon = ge_s_tractor_01, internal, 1
+addon = shield01_mark06_lf, HpShield01, 1
+addon = LargeWhiteSpecial, HpHeadlight01, 1
+addon = SlowSmallYellow, HpRunningLight01, 1
+addon = SlowSmallYellow, HpRunningLight02, 1
+addon = SlowSmallYellow, HpRunningLight03, 1
+addon = contrail01, HpContrail01, 1
+addon = contrail01, HpContrail02, 1  
+addon = contrail01, HpContrail03, 1
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+</source>
+</data>
+
+<data file="data\equipment\market_ships.ini" method="sectionappend">
+<section>
+[BaseGood]
+base = Li01_13_base
+</section>
+<source>
+marketgood = aps_pegasus_package, 4, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+
+<data file="data\equipment\market_ships.ini" method="sectionappend">
+<section>
+[BaseGood]
+base = Iw03_02_base
+</section>
+<source>
+marketgood = aps_griffen_package, 8, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+
+<data file="data\equipment\market_ships.ini" method="sectionappend">
+<section>
+[BaseGood]
+base = Ew04_01_base
+</section>
+<source>
+marketgood = aps_hydra_package, 16, -1, 1, 1, 0, 1, 1
+</source>
+</data>       
+
+<data file="data\equipment\models\COMMODITIES\NN_ICONS\hydra.3db" method="copyfile" sourcefile="hydra.3db" scanfile="false"> 
+</data>
+<data file="data\equipment\models\COMMODITIES\NN_ICONS\pegasus.3db" method="copyfile" sourcefile="pegasus.3db" scanfile="false">
+</data>
+<data file="data\equipment\models\COMMODITIES\NN_ICONS\griffin.3db" method="copyfile" sourcefile="griffin.3db" scanfile="false">
+</data>
+
+<data file="data\cockpits\aps\APS.ini" method="append" newfile="true"> 
+<source>
+[Cockpit]
+mesh = cockpits\civilian\models\cv_cockpit.cmp
+int_brightness = 0.500000
+head_turn = 35, 15
+
+[CockpitCamera]
+
+[TurretCamera]
+tether = 0.000000, 7.970000, 38.888000
+yaw_rotate_speed = 2.000000
+pitch_rotate_speed = 1.500000
+accel_speed = 5
+</source>
+</data>
+
+<data file="data\ships\aps\aps_hydra.cmp" method="copyfile" sourcefile="aps_hydra.cmp" scanfile="false"> 
+</data>
+<data file="data\ships\aps\aps_pegasus.cmp" method="copyfile" sourcefile="aps_pegasus.cmp" scanfile="false">
+</data>
+<data file="data\ships\aps\aps_griffin.cmp" method="copyfile" sourcefile="aps_griffin.cmp" scanfile="false">
+</data>
+<data file="data\ships\aps\aps_ships.mat" method="copyfile" sourcefile="aps_ships.mat" scanfile="false">
+</data>
+
+</script>
+

@@ -1,0 +1,50 @@
+			    Jason's Freelancer Patch
+				DLL Version 1.12
+
+
+This documents describes the changes made to jflp.dll, released separately from
+the patch.
+
+Legend: * changed, - fixed, + added.
+
+v1.12, 6 December, 2010.
+
++ If an equipment name contains a non-breaking space (Alt+0160), display "n/a"
+  (not available) instead of the actual stats (extra stats only).
+
++ NS versions to remove the extra stats display altogether (No Stats).
+
+- Improved widescreen support (fixed mouse sensitivity; fixed script view;
+  fixed Alt+Tab with the Nav Map open).
+
+
+v1.11, 22 October, 2009.
+
++ If MultiCruise is being used, include the cruise speed in the Engine stats.
+
+
+v1.10, 3 October, 2009.
+
+- Freelancer actually tests if the resolution is 4:3, so your widescreen desktop
+  resolution still wouldn't show up in the list (originally put down to using an
+  unsupported windowed resolution).
+
+* Use En Dash instead of Hyphen-Minus for the trade lane arrow (and chat
+  prompt).  I had intended to use an actual arrow, but the Agency FB font
+  doesn't have it.  (Using the angle quotation mark worked well for the Nav Map,
+  but not so good anywhere else, so the greater-than sign remains.)
+
++ Added 8-way strafing.  Allows simultaneous keypresses to strafe diagonally.
+
++ Put the sector letter first (as in "Sector C4").  (FL Hack can be used to
+  restore the number first.)
+
++ JFLPAC.DLL provides an anti-cheat for cameras.ini.  It prevents fovx and fovy
+  from changing the camera, always using the calculated fovx value (although
+  fovx must still be present in cameras.ini).
+
+
+v1.01, 22 September, 2009.
+
++ Allow roll to work during mouse flight.
+

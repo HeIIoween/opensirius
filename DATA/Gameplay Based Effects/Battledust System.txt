@@ -1,0 +1,55 @@
+The battledust system was devised so that a heated battle would build up dust and debris
+almost to the point of causing a localized nebula. There are three different versions of
+the ALE itself, so use whichever you believe is necessary. 
+
+The system is very simple. Attached to every fighter munition is an explosion. This 
+explosion then calls the battledust effect. It is a very effective and very simple system
+provided you have have a macro set up to give it to every single munition. Do not use this
+on missiles. In effect, each individual bullet contributes a cloud, and as the fights go 
+on and ships get hit, this can create a large cloud over a large area. Its very neat to 
+see. If you want to see an example of this, download the 88 Flak mod by foxUnit01. 
+
+If you have questions, or you think I left something out. Contact me by PM through
+The Starport (Why485), or e-mail me at bmh123@comcast.net
+
+------------------------------------------------------------------------------------------
+
+WEAPONS_EQUIP.INI
+
+Simple explosion that does nothing except spawn the effect. 
+
+[Explosion]
+nickname = battledust
+effect = gf_battledust
+lifetime = 0.000000, 0.000000
+process = disappear
+strength = 0
+radius = 0
+hull_damage = 0
+energy_damage = 0
+impulse = 0
+
+Random gun munition with the battledust applied. 
+
+[Munition]
+nickname = fc_ou_gun02_mark04_ammo
+hp_type = hp_gun
+requires_ammo = false
+explosion_arch = battledust; All you need to do is add this line to every single fighter gun munition. 
+hit_pts = 3
+hull_damage = 763.200012
+energy_damage = 0
+weapon_type = W_Particle01
+one_shot_sound = fire_particle4
+munition_hit_effect = pi_particle_04_impact
+const_effect = pi_particle_04_proj
+lifetime = 2
+force_gun_ori = false
+mass = 1
+volume = 0.000100
+
+------------------------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

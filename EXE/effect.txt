@@ -1,0 +1,262 @@
+//+++++++++++++++++++++++++++++++++++++++++++++
+// ENBSeries effect file
+// visit http://enbdev.com for updates
+// Copyright 2007-2012 (c) Boris Vorontsov
+// settings by Marty McFly
+//+++++++++++++++++++++++++++++++++++++++++++++
+
+// Tonemapping, Sharpen, and Desaturation effects for SA - DKT70 - Feb 2011.
+//NEW: Filmiccurve, Technicolor, Cross Process, Skyrim Tonemap and Colormood.
+
+// HDR Settings.
+float Defog=0.0; // Strength of FogColor, higher = more.
+float4 FogColor={0.15, 0.1, 0.07, 4.0}; // Lens-style color filters for Blue, Red, Yellow, White.
+float Exposure=0.5; // Contrast settings, higher = brighter, but also more white.
+float Gamma=0.01; // Gamma settings for darker or lighter shadows and dark areas, higher = darker.
+float BlueShift=0.1; // Shifts entire color spectrum towards blue, good for images too yellow, but this is global.
+
+// Saturation Levels.
+float sat = 0.1; // Saturation levels, higher values = less saturation, 0 = off.
+
+// Sharpen effect settings. For some good settings try using double your resolution in sxres and syres, and keep sharp strength double the offset. 
+float sharps = 0.0; // Sharpen Strength.
+float offsetv =0.60; // Offset value, higher = more offset from center.
+float sxres = 1920; // Horizontal Resolution setting.
+float syres = 1080; // Vertical Resolution setting.
+float aspect = 1.6; // Aspect Ratio.
+
+
+//#define Filmiccurve
+//Filmiccurve by icelaglace ported to SA by Marty McFly
+float   A = 0.30; // Shoulder Strength 
+float   B = 0.15; // Linear Strength
+float   C = 0.30; // Linear Angle
+float   D = 0.20; // Toe Strength
+float   E = 0.02; // Toe Numerator
+float   F = 2.50; // Toe Denominator
+float   W = 180.0; // White Scale
+
+
+#define Technicolor
+float	TechniPower = 11.0;	// technicolor effect
+float 	TechniAmount = 0.4;
+
+#define SkyrimTonemap
+float	EBrightnessCurveV4=0.8; //contrast and darken
+float	EBrightnessMultiplierV4=180.0; //doesn't affect game appearance at all, only in real high values
+float	EBrightnessToneMappingCurveV4=0.2;  //makes brighter areas darker, limits the brightness level in a smooth way, better
+
+//#define CrossProcess
+float CrossContrast =1.0;
+float CrossSaturation = 1.5;
+float CrossBrightness = 0.125;
+float CrossAmount =0.8;
+float2 crossMatrix [3] =
+{
+float2 (1.03, 0.04),
+float2 (1.09, 0.01),
+float2 (0.78, 0.13),
+};
+
+//#define ColorMood
+//float fRatio = 1.0;	// blend ratio (0-1)
+float moodR = 1.0;	// mood color red component
+float moodG = 1.0;	// mood color green component
+float moodB = 0.9;	// mood color blue component
+//--------------------------------------------------------------------------------------
+// Textures
+//--------------------------------------------------------------------------------------
+texture2D texColor;
+
+//--------------------------------------------------------------------------------------
+// Sampler Inputs
+//--------------------------------------------------------------------------------------
+
+
+sampler2D InputSampler = sampler_state
+{
+     Texture = (texColor);
+     MinFilter = Point;
+     MagFilter = Anisotropic;
+     MipFilter = Point;
+     AddressU  = Clamp;
+     AddressV  = Clamp;
+     SRGBTexture=FALSE;
+     MaxMipLevel=0;
+     MipMapLodBias=0;
+};
+
+
+struct VS_OUTPUT_POST {
+ float4 vpos  : POSITION;
+ float2 txcoord : TEXCOORD0;
+};
+
+struct VS_INPUT_POST {
+ float3 pos  : POSITION;
+ float2 txcoord : TEXCOORD0;
+};
+
+float pixelWidth;
+float pixelHeight;
+
+
+//--------------------------------------------------------------------------------------
+// Vertex Shader Input
+//--------------------------------------------------------------------------------------
+
+VS_OUTPUT_POST VS_PostProcess(VS_INPUT_POST IN)
+{
+ VS_OUTPUT_POST OUT;
+
+ float4 pos=float4(IN.pos.x,IN.pos.y,IN.pos.z,1.0);
+
+ OUT.vpos=pos;
+ OUT.txcoord.xy=IN.txcoord.xy;
+
+ return OUT;
+}
+
+//--------------------------------------------------------------------------------------
+// Pixel Shader
+//--------------------------------------------------------------------------------------
+
+float4 main(float2 uv : TEXCOORD) : COLOR
+{
+    float4 c = tex2D(InputSampler, uv);
+	 
+    c.rgb = max(0, c.rgb - Defog * FogColor.rgb);
+    c.rgb *= pow(2.0f, Exposure);
+    c.rgb = pow(c.rgb, Gamma);
+	
+    float3 d = c.rgb * float3(1.05f, 0.97f, 1.27f);
+    c.rgb = lerp(c.rgb, d, BlueShift);
+
+#ifdef Filmiccurve
+    float4 curr = ((c*(A*c+C*B)+D*E)/(c*(A*c+B)+D*F))-E/F;
+    float4 whiteScale = ((W*(A*W+C*B)+D*E)/(W*(A*W+B)+D*F))-E/F;
+    c = curr*whiteScale;
+#endif
+
+#ifdef SkyrimTonemap
+        float Y = dot(c.rgb, float3(0.299, 0.587, 0.114)); 
+	float U = dot(c.rgb, float3(-0.14713, -0.28886, 0.436)); 
+	float V = dot(c.rgb, float3(0.615, -0.51499, -0.10001)); 
+	Y=pow(Y, EBrightnessCurveV4);
+	Y=Y*EBrightnessMultiplierV4;
+	c.rgb=V * float3(1.13983, -0.58060, 0.0) + U * float3(0.0, -0.39465, 2.03211) + Y;
+
+	c.rgb=max(c.rgb, 0.0);
+	c.rgb=c.rgb/(c.rgb+EBrightnessToneMappingCurveV4);
+#endif
+
+#ifdef CrossProcess
+        float4 image1 = c;
+	float4 image2 = c;
+
+	float gray = dot(float3(0.3,0.59,0.1), image1); 
+	image1 = lerp (gray, image1,CrossSaturation);
+
+	image1 = lerp (0.5, image1,CrossContrast);
+
+	image1 +=CrossBrightness;
+//	image1 *=1.2;
+
+	image2.r = image1.r * crossMatrix[0].x + crossMatrix[0].y;
+	image2.g = image1.g * crossMatrix[1].x + crossMatrix[1].y;
+	image2.b = image1.b * crossMatrix[2].x + crossMatrix[2].y;
+
+	c = lerp(image1, image2, CrossAmount);
+
+#endif
+	
+#ifdef Technicolor
+
+float4 redfilter = float4 (0.8, 1.0, 0.8, 1.00);
+    	float4 greenfilter = float4(0.30, 1.0, 0.0, 1.0);
+    	float4 bluefilter = float4(0.25, 1.0, 1.0, 1.0);
+    	float4 redorangefilter = float4(1.05, 0.620, 0.0, 1.0);
+    	float4 cyanfilter = float4(0.0, 1.30, 1.0, 1.0);
+    	float4 magentafilter = float4(1.0, 0.0, 1.05, 1.05);
+    	float4 yellowfilter = float4(1.6, 1.6, 0.05, 1.0);
+    	float redNegativeAmount = 0.52;
+    	float greenNegativeAmount = 0.55;
+    	float blueNegativeAmount = 0.52;
+
+   	float4 tcol = c;
+    	float4 filtgreen = tcol * greenfilter;
+    	float4 filtblue = tcol * magentafilter;
+    	float4 filtred = tcol * redorangefilter;
+    	float4 rednegative = (filtred.r + filtred.g + filtred.b)/(redNegativeAmount * TechniPower);
+    	float4 greennegative = (filtgreen.r + filtgreen.g + filtgreen.b)/(greenNegativeAmount* TechniPower);
+    	float4 bluenegative = (filtblue.r+ filtblue.g + filtblue.b)/(blueNegativeAmount* TechniPower);
+    	float4 redoutput = rednegative + cyanfilter;
+    	float4 greenoutput = greennegative + magentafilter;
+    	float4 blueoutput = bluenegative + yellowfilter;
+    	float4 result = redoutput * greenoutput * blueoutput;
+
+	c = lerp(tcol, result, TechniAmount);
+
+#endif
+
+#ifdef ColorMood
+
+	float4 colMood = 2.0f;
+ 
+	colMood.r = moodR;
+	colMood.g = moodG;
+	colMood.b = moodB;
+ 
+	float fLum = dot(c, 1) / 3;
+ 
+	colMood = lerp(0, colMood, saturate(fLum * 2.0));
+	colMood = lerp(colMood, 1, saturate(fLum - 0.5) * 2.0);
+ 
+	float4 colOutput = lerp(c, colMood, saturate(fLum * fRatio));
+ 
+	c.rgb=max(0, colOutput);
+
+#endif
+
+    float2 InputSize = float2(sxres, syres/aspect);
+    float Amount = sharps;
+    float2 offset = offsetv / InputSize;
+    float4 color;
+    color = tex2D(InputSampler, uv);
+    color += tex2D(InputSampler, uv - offset) * Amount;
+    color -= tex2D(InputSampler, uv + offset) * Amount;
+	
+	float middlegray=(c.r+c.g+c.b)*0.333;
+	float3 diffcolor=c.rgb-middlegray;
+	c.rgb+=diffcolor*-sat;
+
+    return c * color; 
+}
+
+
+
+
+//--------------------------------------------------------------------------------------
+// Compiler
+//--------------------------------------------------------------------------------------
+technique PostProcess
+{
+    pass P0
+    {
+#ifdef E_SHADER_3_0
+ VertexShader = compile vs_3_0 VS_PostProcess();
+ PixelShader  = compile ps_3_0 main();
+#else
+ VertexShader = compile vs_2_0 VS_PostProcess();
+ PixelShader  = compile ps_2_0 main();
+#endif
+
+ ZEnable=FALSE;
+ CullMode=NONE;
+ ALPHATESTENABLE=FALSE;
+ SEPARATEALPHABLENDENABLE=FALSE;
+ AlphaBlendEnable=FALSE;
+ FogEnable=FALSE;
+ SRGBWRITEENABLE=FALSE;
+ }
+}

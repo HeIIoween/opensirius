@@ -1,0 +1,10 @@
+The sounds.ini included here is a reference file for the sound effects
+that are called by effects in other parts of this pack. To add these
+sound effects to your mod, simply copy and paste the information in this 
+sounds.ini into your mods. 
+
+-------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

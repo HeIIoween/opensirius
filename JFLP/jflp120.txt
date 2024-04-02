@@ -1,0 +1,164 @@
+DATA\SOLAR\BLACKHOLE\bh_flute4.pte
+DATA\SOLAR\PLANETS\PLANET_ICE_GREY\planet_ice_grey.mat~tmp1
+DATA\FX\MISC\tlrtube.3db
+- deleted (not used).
+
+DATA\cameras.ini
+- restored original fovx values (jflp.dll always calculates).
+
+DATA\FX\fuse_suprise_solar.ini
+- added HpTurret07/8/9 to fuse_suprise_drop_loot (drops additional loot).
+
+DATA\FX\sarma_clear.txm
+- new file for rtc_rh03_sun below.
+
+DATA\FX\MISC\misc_ale.ini
+- rtc_rh03_sun: a properly-colored sun for Baden-Baden. [mknote]
+
+DATA\FX\MISC\rtc_rh03_sun.ale
+- new file for rtc_rh03_sun above.
+
+DATA\INTERFACE\HudShift.ini
+- defines interface elements for HudShift.dll (see below).
+
+DATA\INTERFACE\knowledgemap.ini
+- fixed rumor 131660 (coded incorrectly, now provides Kepler).
+
+DATA\MISSIONS\faction_prop.ini
+- fc_c_grp, fc_ou_grp: increase lastname to 229460.
+
+DATA\MISSIONS\mbases.ini
+- li0107_ageira_001_m, li0110_ageira_003_f, li0110_ageira_004_f: changed their
+  individual_name (avoid duplicates);
+- li0204_bounty_002_m: renamed to li0204_bounty_002_f (female character).
+
+DATA\MISSIONS\M04\m04.ini
+- sendcomm_DX_M04_1380_JUNI: use rh_n_grp, not rh_m_grp. [mknote]
+
+DATA\MISSIONS\M09\m09.ini
+- unlock (and re-lock) Ku07_to_Ku06_hole (compensate for the lock I added).
+
+DATA\MISSIONS\M10\m10.ini
+- distvec_sendcomm_dx_m10_1200_cobo: remove "_base" from "bw05_03" (match below
+  in bw05.ini).
+
+DATA\MISSIONS\M12\m12.ini
+- range_for_sendcomm_dx_m12_0500_vonclaussen: remove "_base" from "st01_01"
+  (match below in st01.ini).
+
+DATA\SCRIPTS\BASES\bw_01_equipment_ambi_int_01.thn
+- removed copy of ship cushion (not visible).
+
+DATA\SCRIPTS\BASES\bw_01_shipdealer_ambi_int_01.thn
+- removed player ship cushion (not visible).
+
+DATA\SCRIPTS\BASES\ku_07_deck_ambi_int_01.thn
+- removed gf_rtc_shipcushion_1 (extra cushion).
+
+DATA\SCRIPTS\BASES\pl_11_pad_ambi_day_01.thn
+DATA\SCRIPTS\BASES\pl_11_pad_hardpoint_01.thn
+DATA\SCRIPTS\BASES\pl_12_pad_ambi_day_01.thn
+DATA\SCRIPTS\BASES\pl_12_pad_hardpoint_01.thn
+- adjust the ship for sale position (Curacao & Baden-Baden).
+
+DATA\SCRIPTS\BASES\pl_12_pad_ambi_day_01.thn
+- use rtc_rh03_sun created above.
+
+DATA\SCRIPTS\INTRO\gasminer3.thn
+- adjusted to move the transports off a wide screen.
+
+DATA\SHIPS\loadouts.ini
+- restored the missile ammo lines removed by the SDK (the ammo accumulates).
+
+DATA\SHIPS\shiparch.ini
+- ku_fighter: added the bay door animation and sounds;
+- li_elite2/li_spoiler_lod1: use "type = Spoiler";
+- ge_fighter5/cv_port_wing_lod1: use "type = Port_Wing";
+- ge_csv: fixed HP_bay_surface & HP_bay_external; [Gibbon]
+- ge_repair, ge_lifter, ge_armored, ge_transport, ge_large_transport, ge_train,
+  ge_large_train: more sensible hold sizes. [Gibbon]
+
+DATA\SHIPS\LIBERTY\LI_FREIGHTER\li_freighter.cmp
+- added right-side bay door animation (thanks to Thaddeus).
+
+DATA\SHIPS\UTILITY\CSV\csv.cmp
+- added HpBayDoor01 for ge_csv above. [Gibbon]
+
+DATA\UNIVERSE\universe.ini
+- Ew02: fix msg_id_prefix (was referring to Ew01).
+
+DATA\UNIVERSE\SYSTEMS\BW02\bw02.ini
+- Bw02_02_Base: renamed to Bw02_02 (object, not base).
+
+DATA\UNIVERSE\SYSTEMS\BW03\bw03.ini
+- Bw03_suprise_ge_armored_1, Bw03_suprise_co_elite_1, Bw03_suprise_co_elite_2,
+  Bw03_suprise_co_elite_3, Bw03_suprise_ge_train_1: made visit = 16 (wreck
+  flag).
+
+DATA\UNIVERSE\SYSTEMS\BW05\bw05.ini
+- Bw05_03_Base: renamed to Bw05_03 (object, not base);
+- wrecks with ids_info = 66218: make ids_name = 261753 (Escorts of Kassel).
+
+DATA\UNIVERSE\SYSTEMS\BW09\BASES\ROOMS\bw09_01_bar.ini
+- added missing "music = music_bar_generic02". [mknote identified]
+
+DATA\UNIVERSE\SYSTEMS\EW02\ew02.ini
+- Ew02_suprise_ku_freighter_1, Ew02_suprise_ge_fighter6_1,
+  Ew02_suprise_bh_elite2_1: made visit = 16 (wreck flag).
+
+DATA\UNIVERSE\SYSTEMS\KU04\ku04.ini
+- Ku04_suprise_bw_fighter_1, Ku04_suprise_co_fighter_1: made vist = 16 (wreck
+  flag);
+- Zone_Ku04_01_death: made size = 4100 (match the planet).
+
+DATA\UNIVERSE\SYSTEMS\LI04\li04.ini
+- Zone_Li04_South_Dallas_radioactive_area: added "damage = 10" (missing).
+
+DATA\UNIVERSE\SYSTEMS\ST01\st01.ini
+- St01_01_Base: renamed to St01_01 (object, not base).
+
+EXE\dacom.ini
+- deleted ".\" from flmaterials (not needed, uniformity);
+- added HudShift.dll to [Libraries] (see below).
+
+EXE\flconfigdatabase.txt
+- updated. [Louva-Deus]
+
+EXE\freelancer.ini
+- deleted [;Display] section ([Display] is not used).
+
+EXE\HudShift.dll
+- moves interface elements back to the screen edges for widescreen.
+
+EXE\jflp.dll
+- widescreen improvements (including removing "cockpit aspect" FLSpew warning);
+- implement USER_FULLSCREEN (Alt+Enter toggles windowed mode);
+- allows viewing of server info, even for different versions.
+
+EXE\equipresources.dll
+EXE\infocards.dll
+EXE\misctext.dll
+EXE\misctextinfo2.dll
+EXE\nameresources.dll
+EXE\offerbriberesources.dll
+EXE\resources.dll
+- general fixes and tidying up; [mostly mknote]
+- replaced "A.S." with "AS" (it was used more);
+- replaced "Borderworld Exports" with "Border World Exports"; [mknote]
+- removed "Planet " from Durango, Jersey, Izu (they're moons); [Izu from mknote]
+- added "Planet " to Atka, Munich, Stulingen (they're not moons);
+- replaced "Kruger Mining" with "Kruger Minerals";
+- replaced "Bretonia Mining and Metals" and "Bretonia Mining and Manufacturing"
+  with "Bretonia Mining and Metal" (it's what the NPCs say). [mknote]
+
+EXE\equipresources.dll
+- moved "Advanced" from before Laser to before type in Civilian names.
+
+EXE\misctextinfo2.dll
+- ordered cast & thanks by surname.
+
+EXE\nameresources.dll
+- "Storm" should really be "Escort of the Storm"; [mknote]
+- "Texas -> Bering" tradelane becomes "Bering Jump Gate"; [Moonhead]
+- added the affiliation for those few NPCs without it; [mknote]
+- renamed some NPCs to match their faction in mbases.ini.

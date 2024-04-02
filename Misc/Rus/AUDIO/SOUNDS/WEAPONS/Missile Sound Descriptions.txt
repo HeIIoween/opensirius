@@ -1,0 +1,33 @@
+fire_missile_emp.wav
+
+It is a short fire sound, with a half-second delay 
+before ignition.
+
+----------------------------------------------------------------
+
+fire_missile_homing.wav
+
+Very similar to the above, only without the delay. 
+
+----------------------------------------------------------------
+
+fire_missile_regular.wav
+
+Good long fire sound, has about a second delay before ignition. 
+
+----------------------------------------------------------------
+
+fire_torpedo.wav
+
+Torpedo firing. Big heavy launching noise, with a powerful rocket 
+motor. 
+
+----------------------------------------------------------------
+
+These files are modified versions of sounds that come from 
+zzzspace's excellent sound pack for Lock On: Modern Air Combat, 
+Flaming Cliffs. 
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

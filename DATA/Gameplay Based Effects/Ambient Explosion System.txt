@@ -1,0 +1,158 @@
+The ambient explosion system was designed so that during a battle, random,
+meaningless explosions appeared throughout the battle. They serve no 
+practical purpose and are really only for the visual appeal. To get this 
+effect, it required some rather creative coding. If you want to see an 
+example of this, download the Itano Circus mod. 
+
+The basic idea is this. Every AI ship carries a dummy gun. The AI will see
+a target, and open fire on it. When it does, the dummy gun will fire a missile
+that has a short lifespan such that it explodes as it leaves the barrel. The
+explosion then creates debris similar to the debris that is created when a
+fighter or capital ship normally explodes. This debris is spawned at a preset
+distance, and then explodes. When it explodes, you see the ambient explosion. 
+
+First step is to get the gun itself. Here is the source code for the gun that
+is used in Itano Circus. The code is commented to describe how it works and 
+what it does. 
+
+If you have questions, or you think I left something out. Contact me by PM through
+The Starport (Why485), or e-mail me at bmh123@comcast.net
+
+---------------------------------------------------------------------------------------
+
+WEAPON_EQUIP.INI
+
+This is the code for the dummy missile. 
+
+[Explosion]
+nickname = missile_dummy_explosion
+lifetime = 0.000000, 0.000000
+process = disappear
+strength = 0
+radius = 0
+hull_damage = 0 ; Obviously you dont want this hurting anything. 
+energy_damage = 0
+impulse = 0
+debris_impulse = 0 ; First line of debris code
+debris_type = debris_missile, 1.000000 ; Tells which debris to use
+innards_debris_start_time = 0.000000 ; Tells when to start the debris
+innards_debris_num = 1 ; How many bits of debris are launched. In this system, it is effectively: How many explosions per ship? 
+innards_debris_radius = 1500 ; This is the radius at which the debris are spawned 
+innards_debris_object = simple_torpedo_debris01 ; This is a debris object 
+
+[Munition]
+nickname = missile_dummy_ammo
+explosion_arch = missile_dummy_explosion
+loot_appearance = ammo_crate
+units_per_container = 10
+hp_type = hp_gun
+requires_ammo = false ; Make sure it doesn't need ammo
+hit_pts = 2
+detonation_dist = 4
+lifetime = 0.1 ; Causes the missile to explode shortly after launch
+Motor = missile01_mark02_motor
+force_gun_ori = false
+;const_effect = br_missile02_drive ; I commented out the const_effect so that it is invisible
+HP_trail_parent = HPExhaust
+seeker = DUMB ; This ensures that the AI does not give off lock warnings when it uses it
+time_to_lock = 0
+seeker_range = 5000
+seeker_fov_deg = 90
+max_angular_velocity = 1.0
+DA_archetype = Equipment\models\weapons\dummy_round.3db
+material_library = equipment\models\ku_equip.mat
+ids_name = 265148
+ids_info = 266148
+mass = 1
+volume = 0.000000
+
+[Gun]
+nickname = missile01_mark01_dummy
+ids_name = 263147
+ids_info = 264147
+DA_archetype = equipment\models\weapons\ku_recognizer_launcher.cmp ; In my case, I used an actual model for the dummy launcers. You may want to use a dummy model such as the Nomad Guns. 
+material_library = equipment\models\ku_equip.mat
+HP_child = HPConnect
+hit_pts = 400
+explosion_resistance = 1.000000
+debris_type = debris_normal
+parent_impulse = 20
+child_impulse = 80
+volume = 0.000000
+mass = 10
+hp_gun_type = hp_gun_special_2
+damage_per_fire = 0
+power_usage = 0
+refire_delay = 2 ; Use this to set how often the explosions happen. 
+muzzle_velocity = 0
+projectile_archetype = missile_dummy_ammo
+toughness = 2.400000
+dry_fire_sound = fire_dry
+separation_explosion = sever_debris
+auto_turret = true
+turn_rate = 90
+lootable = true
+LODranges = 0, 500
+
+---------------------------------------------------------------------------------------
+
+LOADOUTS.INI
+
+Add the dummy weapon to every ship. 
+
+[Loadout]
+nickname = co_ge_fighter2_loadout01
+archetype = ge_fighter2
+equip = ge_gf2_engine_01
+equip = npc_shield01_mark02, HpShield01
+equip = infinite_power
+equip = ge_s_scanner_02
+equip = ge_s_tractor_01
+equip = ge_s_thruster_01, HpThruster01
+equip = co_gun01_mark04, HpWeapon01
+equip = co_gun01_mark04, HpWeapon02
+equip = missile01_mark01, HpWeapon03
+equip = missile01_mark01_dummy, HpWeapon03 ; This is where the dummy missile is added. Add it to EVERY ship to ensure it always works. In most cases, you should add the gun to HPWeapon01, and just have it coexist on the hardpoint with the regular HPWeapon01. THe game doesnt care if AI have strange loadouts. 
+cargo = missile01_mark01_ammo, 50
+equip = ge_s_cm_01, HpCM01
+cargo = ge_s_cm_01_ammo, 20
+equip = LargeWhiteSpecial, HpHeadlight
+equip = SlowSmallOrange, HpRunningLight01
+equip = SlowSmallOrange, HpRunningLight02
+equip = SlowSmallOrange, HpRunningLight05
+equip = SlowSmallOrange, HpRunningLight06
+equip = SlowSmallOrange, HpRunningLight07
+equip = contrail01, HpContrail01
+equip = contrail01, HpContrail02
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+
+---------------------------------------------------------------------------------------
+
+EXPLOSIONS.INI
+
+This is the object that the explosions are based off of. In my case, I am using a self-created
+model that is just a dummy object. It has no geometry, so its invisible. 
+
+[Simple]
+nickname = simple_torpedo_debris01
+DA_archetype = Equipment\models\weapons\dummy_round.3db
+material_library = equipment\models\ku_equip.mat
+Mass = 10
+
+[Debris]
+nickname = debris_missile ; Pretty badly named. I should've called it ambient_explosion_debris.
+death_method = exploding ; Make it explode on death
+lifetime = 0.100000, 2.000000 ; Random timer for how long the debris has to live before it explodes. First value is min, second value is max. 
+linear_drag = 100.0000 ; This ensures the debris does not move from its starting position.
+angular_drag = 100.000000, 100.000000, 100.000000 ; Same as above. 
+;trail = gf_continuous_damage ; I used this for debugging, so I could see where the explosion is going to happen. 
+explosion = debris_missile_explosion ; Explosion that the debris will use when it dies. 
+
+[Explosion]
+nickname = debris_missile_explosion ; More bad names, should've been called ambient_explosion
+lifetime = 0.000000, 0.000000
+process = disappear
+effect = battle_ambient_explosion
+;effect = explosion_super_flak ; I commented this out, but this system can be used on capital ships to create an ambient flak around capital ships. 
+

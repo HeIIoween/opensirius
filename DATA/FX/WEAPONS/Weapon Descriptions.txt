@@ -1,0 +1,71 @@
+Compared to the previous effects released on Starport, these have undergone
+serious optimization with minimal loss to quality. I experienced a framerate
+boost of 17 fps to 50 fps after I optimized these effects. 
+
+Color code:
+
+li_ = White/Blue
+br_ = Blue
+ku_ = Yellow
+rh_ = Green
+pi_ = Red 
+
+All th effects in this folder are replacement ALEs for vanilla Freelancer 
+and as such, they require no new code to use. Make sure you read the warning
+regarding the new torpedo explosion below! 
+
+-----------------------------------------------------------------------------
+
+xx_missile01.ale
+
+These are trails that are equivalent to the vanilla homing missile trails. 
+They have no delay before ignition, and just like their vanilla 
+counterparts, they are beam based rather than particle based.
+
+Also note, the missile explosions included in this ALE have been adjusted
+so that they no longer fly through the target. 
+
+-----------------------------------------------------------------------------
+
+xx_missile02.ale
+
+These trails are equivalent to the standard missiles used in vanilla. They
+have about a second delay before the missile ignites. Before ignition it 
+leaves a slight smoke trail, so even with tiny invisible missiles, it is
+still visible. 
+
+Also note, the missile explosions included in this ALE have been adjusted
+so that they no longer fly through the target. 
+
+-----------------------------------------------------------------------------
+
+xx_empmissile.ale
+
+These trails are very similar to the missile01 trails. They have a very
+slight delay before ignition, and the trails are smaller as well. I included
+these for completeness sake. In Itano Circus, they are used for the micro-
+missiles. 
+
+Also note, the missile explosions included in this ALE have been adjusted
+so that they no longer fly through the target. 
+
+-----------------------------------------------------------------------------
+
+xx_torpedo01.ale
+
+This is similar to the old torpedo effect previously released in that it is a
+bright EVE light for the engine and a good smoke trail. Since the last release
+the effect has now been reduced in size to a much more realistic leve. This 
+effect also has a very long delay before ignition, 2 seconds.
+
+WARNING! The explosion visual for this torpedo is MASSIVE. The explosions in 
+this torpedo were originally intended for Itano Circus' Reaction Torpedoes, 
+which are basically small nuclear weapons. When you are calling an explosion 
+effect for your torpedoes, I HIGHLY RECCOMMEND you use the fighter explosions 
+that are included in this pack. They are the correct size. 
+
+-----------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

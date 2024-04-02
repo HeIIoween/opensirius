@@ -1,0 +1,45 @@
+If you have seen the Itano Circus Stress Testing video, you've no doubt seen how the 
+huge capital ship explosions leave a shower of debris. This is a pretty simple effect to 
+add that only requires just a little bit of ini work. 
+
+If you have questions, or you think I left something out. Contact me by PM through
+The Starport (Why485), or e-mail me at bmh123@comcast.net
+
+------------------------------------------------------------------------------------------
+
+For example, the Kusari Battleship explosion. 
+
+Shiparch.ini
+
+Under the Kusari Battleship I have the line "explosion_arch = explosion_ku_battleship" to call the explosion. The explosion is then defined in the "explosions.ini"
+
+Explosion.ini
+
+This comprises of several parts. The first part, is the explosion itself. For which the code is here. 
+
+[explosion]
+nickname = explosion_ku_battleship ; Name
+lifetime = 0.000000, 0 ; Not sure
+process = disappear ; Other value is "shatter" I am not entirely sure what the differences are
+effect = gf_capital_explode_yellow, 0.000000 ; This is the ALE effect that will be called on the explosion
+debris_type = debris_capital_death, 1.000000 ; To be honest I'm not sure what this is or where its defined, I just copied it off the old explosions
+debris_impulse = 150 ; How fast the debris gets thrown outwards
+innards_debris_start_time = 0.000000 ; Presumably sets a delay before the debris spawns
+innards_debris_num = 50 ; How many bits of debris are spawned in the explosion
+innards_debris_radius = 100 ; Radius at which debris are spawned from the center of the object 
+innards_debris_object = simple_torpedo_debris01 ; Very important, which debris object is used for the debris
+
+The second part, is the debris itself. 
+
+[Simple]
+nickname = simple_torpedo_debris01 ; Name 
+DA_archetype = Equipment\models\weapons\dummy_round.3db ; Model of the debris, I used a dummy model I made, its also included in the effects pack
+material_library = equipment\models\ku_equip.mat ; Material for the model of the debris
+Mass = 10 ; How heavy the debris is
+
+
+------------------------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

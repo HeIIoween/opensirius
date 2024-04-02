@@ -1,0 +1,64 @@
+<script>
+<header name="Freelancer Another World: Open Sirius">
+<scriptversion>
+1.3
+</scriptversion>
+<author>
+He||oween.
+</author>
+<modurl>
+http://lancersreactor.ru
+</modurl>
+<description>
+
+Авторы названия Freelancer Another World: Open Sirius - Budu_Kratok, He||oween
+
+Авторы и владельцы модификации Freelancer Another World: Open Sirius - He||oween
+
+Автор перевода оригинальных файлов игры на русский язык Zi0neR (http://fl-orion.ucoz.ru/index/8-359)
+
+Сайт http://lancersreactor.ru
+
+Благодарности (по алфавиту): Adoxa, Budu_Kratok, Doza Letalis, Defence, Cannon, Fark, Folko, Jeider, Jersy, 
+Josh(DiscoUK), KosAcid, Nova, Mirage, Over, SergeyInSpace, Sijei, SilverDF, Точка(Blood Raven), Vital, Wintech, Zi0neR
+а так же всем тем кто поддерживал и сопереживал с нами за мод ;)
+
+В модификации использованы модели от:
+- Gizmo Studios от автора Gibbon
+- SolCommand (http://solcommand.blogspot.com)
+- ID Software, Provox Multimedia
+
+В качестве дешифрованной базы для разработки использован неофициальный патч от Адохи:
+http://adoxa.altervista.org/
+
+Последние изменения:
+* Добавлено множество ролевых рестартов
+* Все закрытые порталы и дыры гиперперехода теперь открыты
+* Добавленна поддержка лоадера (Автообновление мода)
+* Скорость в торговых путях увеличена
+* Уничтожаемые базы и объекты:
+- можно уничтожить даже прыжковую дыру или ворота
+- некоторые объекты обладают взрывной волной
+* Усиленные NPC
+* Усиленные станции и стыковочные кольца
+* Увеличенная плата за миссии
+* NPC иногда просят сдать или продать оружие противника, например ноумедки в Нью-Йорке
+* Астеройды не стоят на месте, а летают как положено
+* Добавлены текстуры высокой четкости - от Radiant: http://www.HD-FL.de.vu
+* Добавлен эффект трения, меняющий скорость корабля в зависимости от наружного оборудования - от Адоха
+* Добавлен эффект, меняющий массу корабля в зависимости от количества и тяжести груза - от Адоха
+* Добавлены Hit Points к астеройдам - от Адоха
+* Добавлена возможность строить собственные станции - от Cannon
+* Добавлены новые корабли и многое другое!
+
+>> Файл мода: http://sourceforge.net/projects/fl-server/files/latest/download <<
+
+Скриншоты:
+http://vk.com/album-76623544_201923726
+
+Видео:
+http://www.youtube.com/user/OpenSirius
+
+</description>
+</header>
+

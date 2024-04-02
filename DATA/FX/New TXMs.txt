@@ -1,0 +1,13 @@
+These two txm files are textures. The smoke.txm contains the new texture that 
+the missile effects in this pack use for their volumetric looking smoke trails.
+The standardeffects.txm contains a new explosion sprite. The smoke.txm will not
+affect anything if it is present, other than providing the NEW textures needed
+for the missile smokes. The standardeffects.txm however will replace the old 
+explosion sprite. If you prefer the old explosion sprite, simply use the vanilla
+version of the standardeffects.txm.
+
+------------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

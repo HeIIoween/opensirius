@@ -1,0 +1,16 @@
+csx_large01_m.wav
+
+This is simply an alternate explosion sound. I used this in Itano
+Circus for the explosion of large capital ships. 
+
+-------------------------------------------------------------------
+
+explosion_torpedo.wav
+
+Another explosion sound. I used this one for the torpedo. 
+
+-------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

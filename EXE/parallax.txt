@@ -1,0 +1,36 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ENGLISH:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+http://skyrim.nexusmods.com/downloads/file.php?id=16919
+
+Update: v0.122 have different parallax fix, now specular works correctly, so if you have
+parallax mods installed, set FixParallaxBugs=true in enbseries.ini file.
+
+
+ENBSeries 0.112 KAGE have bugfix of parallax effect (like in TES Oblivion), which
+can be added by user's modifications, but working wrong in game. If you are interested,
+here is information about such modification:
+
+AUTHOR: Osmodius
+Mod have several versions for different locations and shared via Skyrimnexus web site.
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+РУССКИЙ:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+http://skyrim.nexusmods.com/downloads/file.php?id=16919
+
+Обновлление: v0.122 содержит иное исправление параллакса, теперь блики работают правильно,
+поэтому выставляйте FixParallaxBugs=true в файле enbseries.ini, если используете параллакс.
+
+
+ENBSeries 0.112 KAGE содержит исправление для параллакса как в TES Oblivion, который
+может быть добавлен пользовательскими модификациями, но работает неверно в игре. Если
+вас интересует подобный мод, представляю дополнительную информацию по нему:
+
+АВТОР: Osmodius
+Мод выложен на сайте skyrimnexus и состоит из нескольких частей, каждая из которых под
+определенную локацию или поселение в игре.

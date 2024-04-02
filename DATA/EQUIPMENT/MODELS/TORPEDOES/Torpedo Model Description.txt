@@ -1,0 +1,10 @@
+The torpedo is basically just a resized version of the existing one. This was a 
+specific requirement of Itano Circus as torpedoes are bigger part of gameplay, and
+have been moved to be mounted in pairs on the wings of applicable fighters. The model 
+is here for completeness. 
+
+------------------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 

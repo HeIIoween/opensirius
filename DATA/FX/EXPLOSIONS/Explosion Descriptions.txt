@@ -1,0 +1,71 @@
+All of the effects in this file (with the exception of gf_continuous damage)
+are original effects and thus require additional code in order to implement them.
+Refer to the Explosions_ale ini Description.txt in the Gameplay Based Effects
+folder for more information.
+
+----------------------------------------------------------------------------------
+
+gf_ambient_explosion.ale
+
+This is a decent sized explosion. Slightly bigger than a fighter explosion. In 
+Itano Circus, this is the effect that is played for the random ambient explosions
+that occur in battle. Included for completeness. Reference the 
+Ambient Explosion System.txt for more information. 
+
+----------------------------------------------------------------------------------
+
+gf_battledust.ale
+
+A specific effect created for the battledust system. It is a delayed reaction effect
+that does not become visible until after a couple seconds. Individually, this 
+effect is nearly unnoticeable. However when used many times, it can create whole 
+clouds. There is a folder called battledust that contains different versions of the
+effect as well. Normal is the high performance version, High is the best compromise,
+and Ultra High is for crazy people. Reference the Battledust System.txt for more
+information.
+
+----------------------------------------------------------------------------------
+
+gf_capital_explode_xxxxx.ale
+
+Very large explosions that should be used for large capital ships. There are
+different colored explosions included for whatever you might want to use them for. 
+
+----------------------------------------------------------------------------------
+
+gf_capital_explode_xxxxx_small.ale
+
+Large explosions that should be used for smaller capital ships and transport sized
+ships. There are different colored explosions included for whatever you might want
+to use them for. 
+
+----------------------------------------------------------------------------------
+
+gf_continuous_daamge.ale
+
+This replaces a vanilla Freelancer effect that is used variously throughout the 
+game. It is a flaming trail that I like to use for trailing debris and for when a 
+ship takes heavy damage. As it is a modified vanilla effect, it does not require 
+any ALE code to get working.
+
+----------------------------------------------------------------------------------
+
+gf_explosion_super_flak.ale
+
+An updated version of the flak effect that was released earlier. It is optimized for
+performance. It is also larger than the old effect. Personally, for actual weapon use
+I would reccommend using the old effect. This effect is larger than it needs to be due
+to the way that the ambient flak works in Itano Circus.
+
+----------------------------------------------------------------------------------
+
+gf_fighter_explode_xxxxx_small.ale
+
+Fighter sized explosions. They are provided in different colors for whatever you may
+want to use them for. 
+
+----------------------------------------------------------------------------------
+
+Feel free to use and modify these. Please credit me in the readme of your
+mod. I also ask that you send me a PM through The Starport, or e-mail me at 
+bmh123@comcast.net to give me a heads up on its use. 
