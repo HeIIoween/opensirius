@@ -1,3 +1,5 @@
+.\Misc\PortableGit\bin\git pull https://github.com/HeIIoween/opensirius.git
+
 xcopy .\Misc\Rus\equipresources.dll .\exe /y
 xcopy .\Misc\Rus\infocards.dll .\exe /y
 xcopy .\Misc\Rus\misctext.dll .\exe /y
