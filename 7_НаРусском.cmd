@@ -1,9 +1,9 @@
 @echo off
 echo GITHub mozhet tormozit'. Ozhidayte...
 echo I ne trogay'te faily...! :-E
-git restore .
+git gc --auto
 git pull https://github.com/HeIIoween/opensirius.git
-.\Misc\PortableGit\bin\git restore .
+.\Misc\PortableGit\bin\git gc --auto
 .\Misc\PortableGit\bin\git pull https://github.com/HeIIoween/opensirius.git
 
 xcopy .\Misc\Rus\equipresources.dll .\exe /y
