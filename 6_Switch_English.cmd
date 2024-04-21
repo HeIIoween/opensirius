@@ -1,9 +1,9 @@
 @echo off
 echo GITHub might be unresponsible - just wait... Zzz...
 echo And do not touch the files! :-E
-git restore .
+git gc --auto
 git pull https://github.com/HeIIoween/opensirius.git
-.\Misc\PortableGit\bin\git restore .
+.\Misc\PortableGit\bin\git gc --auto
 .\Misc\PortableGit\bin\git pull https://github.com/HeIIoween/opensirius.git
 
 xcopy .\Misc\Eng\equipresources.dll .\exe /y
