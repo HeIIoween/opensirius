@@ -2,8 +2,10 @@
 echo GITHub might be unresponsible - just wait... Zzz...
 echo And do not touch the files! :-E
 git gc --auto
+git checkout .
 git pull https://github.com/HeIIoween/opensirius.git
 .\Misc\PortableGit\bin\git gc --auto
+.\Misc\PortableGit\bin\git checkout .
 .\Misc\PortableGit\bin\git pull https://github.com/HeIIoween/opensirius.git
 
 xcopy .\Misc\Eng\equipresources.dll .\exe /y
