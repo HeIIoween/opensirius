@@ -11,3 +11,6 @@ misc/portablegit/
 .\misc\portablegit\
 ./Misc/PortableGit/
 ./misc/portablegit/
+
+PortableGit
+/Misc/PortableGit
