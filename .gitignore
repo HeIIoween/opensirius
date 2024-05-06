@@ -3,4 +3,11 @@
 git.exe
 **/PortableGit/*
 Misc\PortableGit\
+misc\portablegit\
 Misc/PortableGit/
+misc/portablegit/
+
+.\Misc\PortableGit\
+.\misc\portablegit\
+./Misc/PortableGit/
+./misc/portablegit/
