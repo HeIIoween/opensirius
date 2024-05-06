@@ -2,3 +2,5 @@
 *.cmd
 git.exe
 **/PortableGit/*
+Misc\PortableGit\
+Misc/PortableGit/
