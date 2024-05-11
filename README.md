@@ -1,4 +1,4 @@
-Сreated under the inspiration of Diablo II, OpenTTD, Freelancer Discovery and Freelancer 88 Flak.
+Сreated under the inspiration of Diablo II, OpenTTD, Freelancer Discovery and Freelancer 88 Flak...
 
 Features:
 - Destructible Universe
